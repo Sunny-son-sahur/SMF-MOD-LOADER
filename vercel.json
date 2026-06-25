@@ -1,7 +1,12 @@
 {
   "version": 2,
-  "rewrites": [
-    { "source": "/validate", "destination": "/api/validate" },
-    { "source": "/generate", "destination": "/api/generate" }
+  "builds": [
+    { "src": "api/validate.js", "use": "@vercel/node" },
+    { "src": "api/generate.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/$1" },
+    { "src": "/validate", "dest": "/api/validate.js" },
+    { "src": "/(.*)", "dest": "/" }
   ]
 }
