@@ -1,6 +1,7 @@
 {
+  "version": 2,
   "rewrites": [
     { "source": "/validate", "destination": "/api/validate" },
-    { "source": "/api/(.*)", "destination": "/api/$1" }
+    { "source": "/generate", "destination": "/api/generate" }
   ]
 }
